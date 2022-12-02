@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mini</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+  <link href="style.css" rel="stylesheet">
+</head>
+<body onload="authUser()">
+  <div class="container" id="container">
+    <div class="form-container sign-in-container">
+      <form action="#">
+        <h1>Mini</h1>
+        <span class="mb-3">My mini XSS validator</span>
+
+        <div class="input-group" id="credentials1">
+          <input type="email" class="form-control" placeholder="e-mail" id="email">
+          <input type="password" class="form-control" placeholder="password" id="password">
+        </div>
+        <div id="credentials2">
+          <button class="mb-3" onclick="registerButton()">Register</button>
+          <button class="mb-3" onclick="loginButton()">Sign In</button>
+        </div>
+        
+        <button class="mb-3" onclick="logoutButton()" id="credentials3">Sign Out</button>
+        
+        <div class="input-group">
+          <input type="text" class="form-control" placeholder="Validate this" id="input">
+        </div>
+        <button class="mb-3" onclick="validateButton()">Validate</button>
+        
+        <div class="input-group">
+          <input type="date" class="form-control" placeholder="from" id="start">
+          <input type="date" class="form-control" placeholder="until" id="end">
+        </div>
+        <button class="mb-3" onclick="logButton()"">Request log</button>
+      </form>
+    </div>
+    <div class="overlay-container">
+      <div class="overlay">
+        <div class="overlay-panel overlay-right">
+          <h5 id="output">No return from API</h5>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+  <script src="main.js"></script>
+</body>
+</html>
